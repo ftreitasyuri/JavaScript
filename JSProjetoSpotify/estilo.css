@@ -88,9 +88,16 @@ button {
     
 }
 
+#progress-container{
+
+    padding-bottom: 1em;
+
+}
+
 #progress-bar{
 
-    margin-bottom: 1.4em ;
+
+    /* margin-bottom: 1.4em ; */
     background-color: #8B999c;
     height: 3px;
     width: 100%;
@@ -100,9 +107,11 @@ button {
 
 #current-progress{
     /* Para usar a mesma definição de progress-bar */
+    /* Uma variável em css */
+    --progress: 0%;
     background-color: white;
     height: inherit;
-    width: 50%;
+    width: var(--progress);
     border-radius: inherit;
     
     
