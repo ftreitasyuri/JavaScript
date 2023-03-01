@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Selectionando Elementos</title>
+
+    <script>
+        function distribuirCaractere(){
+            //Selecionar o valor digitado
+            var caracter = document.getElementById('entrada').value
+
+            document.getElementById('entrada').value = ''
+
+            // limpando espaços em branco nas estremidades
+            caracter.trim()
+
+            // Estrutura condicional para ver se o caracter digitado é um número ou letra
+            switch(caracter){
+                case '0':
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                    // adicionar o caracter no campo referente a números
+                    document.getElementById('numeros').value += caracter
+                    break;
+                default:
+                    // adicionar o carcter no cmapo referente a letras
+                    document.getElementById('letras').value += caracter
+                
+            }
+
+        }
+    </script>
+
+</head>
+<body>
+    <input 
+        type="text"
+        id="entrada"
+        placeholder="Digite um caracter aqui"
+        onkeyup="distribuirCaractere()">
+
+    <hr>
+
+    <span>Letras:</span>
+    <input type="text" disabled id="letras">
+
+    <span>Numeros:</span>
+    <input type="text" disabled id="numeros">
+   
+</body>
+</html>

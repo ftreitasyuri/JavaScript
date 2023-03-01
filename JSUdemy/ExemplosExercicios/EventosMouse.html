@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos do mouse</title>
+    
+    <style>
+        
+        body{
+            margin: 0 auto;
+            text-align: center;
+            align-items: center;
+        }
+
+        .Clicando{
+            
+            /* border: solid 2px red; */
+            /* display: flex; */
+            background-color: aqua;
+            width: 50vw;
+          
+            
+        }
+
+  
+    </style>
+
+    <script>
+
+        function acao1(){
+            alert('Elemento foi clicado')
+        }
+
+        function acao2(){
+            alert('Tirando o mouse')
+        }
+        
+        function acao3(){
+            alert('Passando o mouse')
+        }
+        
+    </script>
+</head>
+<body>
+    <div class="Clicando" onclick="acao1()">
+        <p>OnCLick</p>
+    </div>
+
+    <div class="Clicando" onmouseout="acao2()">
+        <p>OnMouseOut</p>
+    </div>
+
+    <div class="Clicando" onmouseover="acao3()">
+        <p>OnMouseHover</p>
+    </div>
+</body>
+</html>
