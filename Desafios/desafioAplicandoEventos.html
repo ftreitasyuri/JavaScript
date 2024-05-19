@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio - Manipulando Eventos</title>
+    <script>
+
+        function alteraFocus(){
+            document.getElementById('exemplo').style.backgroundColor = 'yellow'
+            
+        }
+
+        function capturaTexto(){
+            console.log(document.getElementById('exemplo').value)
+            var texto = (document.getElementById('exemplo').value)
+
+            //var caracter = (document.getElementById('entrada').value)
+
+            /*
+             Condição: Se o length da var texto for <3 bkg fica vermelho
+                       SeNão o bkg fica verde
+
+            */
+            texto.trim()
+
+            console.log(texto.length)
+            if(texto.length <= 3){
+                console.log('Verde')
+                document.getElementById('exemplo').style.backgroundColor = '#FF0000'
+            }else{
+                console.log('Vermelho')
+                document.getElementById('exemplo').style.backgroundColor = '#00FF00'
+                
+            }
+
+
+        }
+        
+    </script>    
+        
+</head>
+<body style="background-color: rgb(169, 182, 178);"> 
+    
+    <h3>Aplicando Eventos</h3>
+       
+    <input onfocus="alteraFocus()" onblur="capturaTexto()" type="text" id="exemplo">
+    
+</body>
+</html>

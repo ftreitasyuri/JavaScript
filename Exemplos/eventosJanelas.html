@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Janelas </title>
+    <script>
+        /*
+        Emeplos de eventos que podem ser capturados a partir da janela do navegador
+        onresize = evento disparado ao redimencionar a tela/janela
+        onscroll = evento disparado ao rolar a tela
+       
+        */
+
+        function acao1(){
+            console.log('Evento disparado')
+        }
+
+        function acao2(){
+            console.log('Rolando a tela')
+        }
+    
+
+    </script>
+</head>
+<body onresize="acao1()" onscroll="acao2()"> 
+    <div 
+    style="height: 3000px;
+    width: 125px;
+    background: #ccc" onscroll="acao2()">
+    </div>
+    
+    
+</body>
+</html>

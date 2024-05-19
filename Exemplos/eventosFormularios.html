@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Formularios </title>
+    <script>
+        /*
+        Emeplos de eventos que podem ser capturados a partir de formularios
+        onfocus = Acionado quando o elemento recebe o focu do cursos do mouse
+        onblur = Acionado quando o elememnto perde o foco (Ex: Quando apertamos o TAB)
+        onchange = Acionando quando o estado do elemento é alterado
+       
+        */
+
+        function acao1(){
+            console.log('Recebeu o focu')
+        }
+
+        function acao2(){
+            console.log('Perdeu o focu')
+        }
+
+        function acao3(){
+            console.log('Mundaça de opção')
+        }
+    
+
+    </script>
+</head>
+<body> 
+    <!-- Aplicando o focu no elemento, ou seja, quando você clica no elemento -->
+    <input onfocus="acao1()" type="text">
+    <!-- Retirando o focu, ou seja, quando você clica fora do elemento -->
+    <input onblur="acao2()" type="text">
+
+    <!-- Estado modificado -->
+    <select onchange="acao3()">
+        <option value="">--Selecione um Cor--</option>
+        <option value="1">Amarela</option>
+        <option value="2">Azul</option>
+        <option value="2">Verde</option>
+        <option value="2">Vermelho</option>
+        <option value="2">Rosa</option>
+        <option value="2">Roxo</option>
+    </select>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Teclado </title>
+    <script>
+        /*
+        Emeplos de eventos que podem ser capturados a partir do teclado
+        onkeydown = Acionado no momento em que uma tecla é pressionada
+        onkeypress = Acionado ao manter uma tecla pressionada
+        OBS: onkeypress é acionado apenas para teclas que representam caracteres, ou seja, ctrl, alt não funcionam
+        onkeyup = = Acionado quando uma tecla é liberada
+        */
+
+        function acao1(){
+            console.log('Evento disparado')
+        }
+
+    
+
+    </script>
+</head>
+<body> 
+    <!-- Usar o onkeydown quando for tratar máscara de entrada -->
+    <input onkeydown="acao1() "="text">
+    <input onkeyup="acao1() "="text">
+    <input onkeypress="acao1() "="text">
+</body>
+</html>

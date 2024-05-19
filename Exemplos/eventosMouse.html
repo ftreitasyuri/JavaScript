@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Mouse </title>
+    <script>
+        /*
+        Todos os eventos que poder ser capturados
+        onclick = elemento clicado
+        ondblclick = elemento clicado 2 vezes
+        onmouseup = click liberado de algum elemento
+        onmouseover = ao passar o mouse sob algum elemento
+        onmouseout = retirar o mouse de algum elemento
+        */
+        function acao(){
+            alert('Evento disparado')
+            
+        }
+
+        function acao2(){
+            alert('O mouse foi retirado do quadrado')
+        }
+
+    </script>
+</head>
+<body> 
+    <!--  -->
+    <div id="divTeste" onclick="acao()" style="background: #ccc; height: 150px; width: 150px">Onclick</div>
+    <div id="divTeste" ondblclick="acao()" style="background: blue; height: 150px; width: 150px">Ondblclick</div>
+    <div id="divTeste" onmouseup="acao()" style="background: rgb(255, 145, 0); height: 150px; width: 150px">Onmouseup</div>
+    <div id="divTeste" onmouseover="acao()" style="background: rgb(255, 0, 170); height: 150px; width: 150px">Onmouseover</div>
+    <div id="divTeste" onmouseout="acao()" style="background: rgb(60, 255, 0); height: 150px; width: 150px">Onmouseout</div>
+    <!-- Também é possível usar mais de um evento -->
+    <div id="divTeste" onclick="acao()" onmouseout="acao2()" style="background: rgb(255, 0, 43); height: 2000px; width: 200px">Onclick & Onmouseout</div>
+</body>
+</html>

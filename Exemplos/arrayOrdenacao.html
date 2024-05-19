@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <script>
+         
+        let listaFrutas = ["Maçã", "Banana", "Laranja", "Morango"];
+
+        let listaNumeros = [12, 40, 3, 7, 19, 1]
+        let listaNumeros2 = [12, 40, 3, 7, 19, 1]
+
+        // O método sort serve para reordenar em odem alfanumérica
+        listaFrutas = listaFrutas.sort()
+        console.log(listaFrutas)
+        
+        // Para ordenar números precisamos ensinar o métido .sort(), e isso é feito de forma padrão por função
+        //função padrão
+        function ordernaNumeros(a, b){
+            return a - b            
+            /*
+            A função faz basicamente o seguite:{
+            Valor < 0 é ordenado antes de b
+            Valor > 0 é ordenado antes de a
+            Se os valores forem ==(iguais) a ordem é mantida
+            */
+        }   
+
+        listaNumeros = listaNumeros.sort(ordernaNumeros)
+        console.log(listaNumeros)
+        console.log(listaNumeros2)
+
+        
+    </script>
+</head>
+<body>
+    <h1>Ordenando Arrays</h1>
+    
+    
+</body>
+
+</html>

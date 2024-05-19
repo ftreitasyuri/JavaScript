@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 3</title>
+    <script>
+         
+        // Array de objetos
+        var objetos = Array('Cadeira', 'Impressora', 'Garfo')
+
+   
+
+        function adicionaItem(){
+            
+            textoInput = (document.getElementById('texto').value)
+
+            if(textoInput === '' || typeof parseFloat(textoInput) === "number" && isFinite(parseFloat(textoInput))){
+                alert('Favor adicionar um objeto válido')
+            }else{
+                //console.log('Item adicionado')
+                var item = textoInput
+                //Verificar se o valor existe no array objetos
+                //var aux = listaFrutas.indexOf('Banana')
+
+                var aux = objetos.indexOf(item)
+                //console.log(aux)
+
+                // Tratando a questão do campo receber um valor que já existe na lista
+                if(aux === -1){
+                    console.log('Item adicionado')
+
+                    objetos.push(item)
+                    console.log('Lista: ' + objetos) 
+                }else{
+                    alert('O item já existe na lista, digite um outro objeto' )
+                }
+                
+            }
+
+            document.getElementById('texto').value = ''
+        }
+
+        function ordenaItens(){
+            console.log('Itens ordenados')
+            objetos.sort()
+            document.getElementById('tArea').value = ''
+            document.getElementById('tArea').value = objetos
+        }
+        
+    </script>
+</head>
+<body>
+    <h1>Desafio - Manipulando Arrays</h1>
+
+    <input type="text" id="texto" placeholder="Digite um objeto ex: Cadeira">
+    
+    <button onclick="adicionaItem()" id="Adicionar">Adicionar</button>
+    <button onclick="ordenaItens()" id="Ordenar">Ordenar</button>
+    <hr>
+    <textarea
+    name="lista" id="tArea"
+    style="width: 250px; height: 200px">Cadeira, Impressora, Garfo</textarea>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso JavaScript</title>
+    <script>
+
+        // Função
+        function calcularAreaTerreno(largura, comprimento){
+
+            var area = largura * comprimento
+
+
+            return area
+        }
+        /* Chamando a função 
+        calcularAreaTerreno(15, 25)
+        */
+
+        // Aplicando o retorno da função calcularAreaTerreno em uma variável e, printando na tela
+        //var resultadoArea = calcularAreaTerreno(20, 25)
+        //document.write('O terreno possui ' + resultadoArea + ' metros quadrados')
+
+        // Deixando dinâmico a função, ao deixar o usuário digitar os valores
+
+        var larguraT = prompt('Digite a largura do terreno: ')
+        var compT = prompt('Digite o comprimento do terreno: ')
+
+        var larguraT = parseFloat(larguraT)
+        var compT = parseFloat(compT)
+
+        var resulArea = larguraT * compT
+
+        document.write('O terreno possui ' +resulArea+ ' metros quadrados')
+
+
+    </script>
+</head>
+<body> 
+
+    
+</body>
+</html>
