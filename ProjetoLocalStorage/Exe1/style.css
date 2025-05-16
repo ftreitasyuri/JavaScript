@@ -9,7 +9,7 @@
 
 body{
     background-image: url('./img/background.png');
-    background-position: 100%;
+    background-repeat: no-repeat;
 }
 
 .input-task{
