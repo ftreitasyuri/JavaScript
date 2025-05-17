@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Base JS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts/scripts.js" defer></script>
+</head>
+
+<body>
+    <div id="container">
+        <header id="cabecalho">
+            <nav id="navbar">
+                <span>SMTE</span>
+                <ul>
+                    <li>Home</li>
+                    <li>WhoWR</li>
+                    <li><a onclick="logout()">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="principal">
+            <h1>Conteúdo Principal</h1>
+
+            <form action="" id="formLogin">
+                <div id="principalForm">
+                    <div class="estiloInput">
+                        <span for="">Email</span>
+                        <input type="text" name="" id="email" placeholder="Digite seu e-mail" autocomplete="email" value="teste@teste.com">
+                    </div>
+                    <div class="estiloInput">
+                        <span for="">Senha</span>
+                        <input type="password" name="" id="password" placeholder="Digite sua senha" autocomplete="new-password" value="admin123">
+                        <br>
+                        <button id="btnEnviar" type="submit">Login</button>
+                        <br>
+                    </div>
+
+                </div>
+            </form>
+
+            <div>
+                <label for="tema">Escolha o tema:</label>
+                <select name="tema" id="tema" onchange="temaCheck()">
+                    <option value="light">Claro</option>
+                    <option value="dark">Escuro</option>
+                </select>
+            </div>
+            
+
+        </main>
+
+        <aside id="lateral">
+            <h2>Categorias</h2>
+            <ul>
+                <li>Marido de Aluguel</li>
+                <li>Pintor</li>
+                <li>Eletricista</li>
+                <li>Mestre de Obra</li>
+                <li>Ajudantes</li>
+                <li>Vidraceiro</li>
+                <li>Encanador</li>
+            </ul>
+
+        </aside>
+
+        <footer id="rodape">
+            <div>
+                <h3>Todos os direitos reservados</h3>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

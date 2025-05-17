@@ -1,0 +1,104 @@
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+/* Estilo para desktop */
+ #container{
+    background-color: aquamarine;
+    
+    display: grid;
+    grid-template-areas: 
+        'cabecalho cabecalho cabecalho cabecalho cabecalho'
+        'lateral principal principal principal principal'
+        'rodape rodape rodape rodape rodape'
+    ;
+    gap: 5px;
+ }
+
+header{
+    grid-area: cabecalho;
+    background-color: coral;
+}
+
+#navbar{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#navbar ul{
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+
+main{
+    grid-area: principal;
+    background-color: darkgray;
+    
+}
+
+#principal form{
+    border: solid 1px black;
+    min-height:50vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+#principal form #principalForm{
+    background-color: aqua;
+    /* width: 350px; */
+    /* margin: 0 auto; */
+
+
+}
+
+.estiloInput{
+    display: grid;
+    padding: 10px;
+}
+
+.estiloInput label{
+    font-size: 20px;
+    color: #fff;
+
+}
+
+.estiloInput input{
+    padding: 5px;
+}
+
+
+aside{
+    grid-area: lateral;
+    background-color: forestgreen;
+    
+}
+
+footer{
+    grid-area: rodape;
+    background-color: tomato;
+}
+
+/* Estilo mobile */
+@media(max-width: 500px){
+    #container{
+         grid-template-areas: 
+        'cabecalho'
+        'principal'
+        'lateral'
+        'rodape'
+    ;
+    
+    gap: 5px;
+    }
+
+    #principal{
+        min-height: 50vh
+    }
+
+  
+}
