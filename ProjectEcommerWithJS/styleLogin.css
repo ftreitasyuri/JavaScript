@@ -1,0 +1,61 @@
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#loginGeral {
+    /* border: solid 1px red; */
+    min-height: 82vh;
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#formularioLogin {
+    border: solid 2px #ccc;
+    background-color: #cccccc62;
+    border-radius: 10px;
+    display: grid;
+    gap: 10px;
+    padding: 20px;
+    width: 350px;
+
+}
+
+#formularioLogin input {
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+#formularioLogin button {
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+#formularioLogin button:hover {
+    background-color: darkturquoise;
+    transition: .5s;
+    color: #fff;
+    cursor: pointer;
+
+}
+
+
+
+/* ESTILOS LOGIN MOBILE/CELULAR  */
+@media(max-width: 550px) {
+
+
+    #formularioLogin input,
+    #formularioLogin button {
+        padding: 10px;
+        font-size: 1.3rem;
+      
+    }
+
+
+}
