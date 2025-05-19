@@ -48,6 +48,18 @@ li {
     display: flex;
     gap: 10px;
 }
+/* 
+#entrar{
+
+} */
+
+#carrinho{
+    display: none;
+}
+
+/* #sair{
+   display: none;
+} */
 
 /* FIM BARRA NAVEGACAO */
 

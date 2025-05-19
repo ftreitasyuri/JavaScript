@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommer with JS</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="styleLogin.css">
     <!-- IMPORTAR O FONTICON -->
     <script src="./scritps/index.js" defer></script>
+    
 </head>
 <!-- Todos os ID's, Clasess e Names estão em português -->
 
@@ -28,25 +28,14 @@
 
             <ul>
                 <li id="telaInicial"><a href="index.html">Home</a></li>
-                <!-- <li id="carrinho"><a href="mycar.html">MyCar</a></li> -->
+                <li id="sair" onclick="logout()">Logout</li>
+
+                <!-- <li><a href="mycar.html">MyCar</a></li> -->
             </ul>
         </nav>
-
-        <main id="loginGeral">
-            <form action="" id="formularioLogin">
-
-                <label for="email">Email</label>
-                <input type="text" id="email" placeholder="Enter with your E-mail" value="emilys">
-
-                <label for="senha">Password</label>
-                <input type="text" id="senha" placeholder="Enter with your E-mail" value="emilyspass">
-
-                <button>Login</button>
-
-            </form>
-
+        <main>
+            <h1>My little Car</h1>
         </main>
-
 
         <footer id="rodape">
             <div>
@@ -55,7 +44,7 @@
         </footer>
         <!-- FIM AREA NAVBAR -->
     </main>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./scritps/main.js" defer></script>
 </body>
 
 </html>

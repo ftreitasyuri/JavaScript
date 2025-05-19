@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- IMPORTAR O FONTICON -->
     <script src="./scritps/index.js" defer></script>
+    <script src="./scritps/main.js" defer></script>
 </head>
 <!-- Todos os ID's, Clasess e Names estão em português -->
 
@@ -26,8 +27,9 @@
             </div>
 
             <ul>
-                <li><a href="login.html">Login</a></li>
-                <li>MyCar</li>
+                <li id="entrar"><a href="login.html">Login</a></li>
+                <li id="carrinho"><a href="mycar.html">MyCar</a></li>
+                <li id="sair" onclick="logout()">Logout</li>
             </ul>
         </nav>
 
