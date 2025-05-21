@@ -30,12 +30,12 @@ checkLocation();
 /************************************************************************* */
 
 // FUNCTION LOGIN
-async function login(username, passs) {
+async function login(username, pass) {
     try {
         axios.post('https://dummyjson.com/auth/login', {
             headers: { 'Content-Type': 'application/json' },
             username: username,
-            password: passs
+            password: pass
         })
             .then(function (res) {
                 console.log(res.data);
@@ -63,4 +63,80 @@ async function login(username, passs) {
 }
 
 // END LOGIN FUNCTION
+
+var allProducts = Array();
+// START FUNCTION TO GET THE ALL ITEMS/PRODUCTS FROM API
+async function getAllProducts() {
+    try {
+        const allProdutcsData = await axios.get('https://dummyjson.com/products');
+        // console.log(allProdutcsData.data);
+        // allProducts = allProdutcsData.data;
+        listAllProducts(allProdutcsData.data.products);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+getAllProducts();
+// END FUNCTION TO LIST THE ITEMS FROM API
+
+
+// START FUNCTION TO LIST ALL PRODUCTS
+
+function listAllProducts(products) {
+
+    console.log(products);
+
+    if (!Array.isArray(products)) {
+        throw new TypeError("Esperado um array de produtos.");
+    }
+
+    if (products.length === 0) {
+        return "Nenhum produto disponível.";
+    }
+
+    /**
+     *
+     *  Listagem caso seja necessário futuramente
+     * const listagem = products.map((produto, index) => `${index + 1}. ${JSON.stringify(produto)}`);
+     * console.log(listagem);
+    
+     */
+
+    products.forEach(product => {
+        // // li
+        // const listLi = document.createElement("li");
+        // const valueText = document.createTextNode(product.title)
+        // listLi.appendChild(valueText);
+        // document.getElementById('listarProdutos').appendChild(listLi);
+
+        // h6
+        const hSix = document.createElement('h6');
+        const valueHSix = document.createTextNode(product.title)
+        hSix.appendChild(valueHSix);
+        document.getElementById('listaItem').appendChild(hSix);
+
+        // img
+        const imgItem = document.createElement('img');
+        // imgItem.src = product.images[0];
+        imgItem.src = product.thumbnail;
+
+        const listItem = document.getElementById('listaItem');
+
+        if(listItem){
+            listItem.appendChild(imgItem);
+        }
+
+
+
+
+
+    });
+
+    // return listagem;
+}
+
+// END FUNCTION TO LIST ALL PRODUCTS
+
+
 
