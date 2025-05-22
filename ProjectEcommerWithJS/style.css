@@ -48,12 +48,13 @@ li {
     display: flex;
     gap: 10px;
 }
+
 /* 
 #entrar{
 
 } */
 
-#carrinho{
+#carrinho {
     display: none;
 }
 
@@ -90,19 +91,21 @@ li {
 #todosProdutos {
     grid-area: todosProdutos;
     background-color: rgb(155, 67, 156);
-    width: 95%;
+    width: 95vw;
     margin: 0 auto;
     display: flex;
+    
     /* grid-template-areas:
         'tituloProdutos tituloProdutos tituloProdutos tituloProdutos tituloProdutos tituloProdutos'
         'listarProdutos listarProdutos listarProdutos listarProdutos listarProdutos listarProdutos'
     ; */
+    /* border: solid 2px #000; */
 
 }
 
-#tituloProdutos {
+/* #tituloProdutos {
     grid-area: tituloProdutos;
-}
+} */
 
 #listarProdutos {
     grid-area: listarProdutos;
@@ -110,17 +113,22 @@ li {
     padding: 5px;
     display: flex;
     flex-wrap: wrap;
+    
+    /* flex-wrap: wrap-reverse; */
     /* justify-content: space-between; */
     /* margin: 10px 0 10px 0; */
-    gap: 20px;
+    gap: 5px;
+    border: solid 2px #000;
+
 
 }
 
-#listarProdutos li {
+.listaItem {
     /* border: solid 2px #000; */
     background-color: #fff;
     border-radius: 15px;
-    /* min-width: 200px; */
+    width: 350px;
+    margin: 0 auto;
 }
 
 #listarProdutos li h6 {
@@ -138,12 +146,12 @@ li {
     background-color: rgb(20, 224, 20);
 }
 
-#listarProdutos li img {
-    width: 100%;
+.imagemItem{
 
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     border-bottom: #000 solid 2px;
+    width: 100%;
 }
 
 #listarProdutos li img:hover {
@@ -202,7 +210,7 @@ li {
 
 
 /* ESTILOS MOBILE/CELULAR  */
-@media(max-width: 550px) {
+@media(max-width: 414px) {
 
 
     /* ESTILOS MOBILE LISTA DE PRODUTOS */
@@ -214,9 +222,27 @@ li {
         padding: 15px;
     }
 
-    #listarProdutos li {
 
-        width: 47%;
+
+    #listarProdutos{
+        /* max-width: 414px;         */
+        display: flex;
+        gap: 10px;
+
+        /* border: solid 2px black; */
+        
+    }
+
+    .listaItem{
+        width: 180px;
+    }
+    .imagemItem{
+        width: 100%;
+}
+
+
+    .tituloItem{
+    flex-wrap: wrap;
     }
 
     /* FIM ESTILOS MOBILE LISTA DE PRODUTOS */

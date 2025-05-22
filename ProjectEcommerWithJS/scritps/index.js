@@ -92,7 +92,7 @@ function listAllProducts(products) {
         return "Nenhum produto disponível.";
     }
 
-    const ulElement = document.getElementById('listarProdutos'); // Corrigido para o UL real
+    const ulElement = document.getElementById('listarProdutos'); 
 
     products.forEach(product => {
         // Cria o li principal
@@ -141,7 +141,7 @@ function listAllProducts(products) {
         pDiscount.textContent = `R$ ${valorFinal.toFixed(2)}`;
         divInfos.appendChild(pDiscount);
 
-        // button
+        // Botão
         const btnItem = document.createElement('button');
         btnItem.className = 'adicionarCarrinho';
         btnItem.textContent = "Add Car";
