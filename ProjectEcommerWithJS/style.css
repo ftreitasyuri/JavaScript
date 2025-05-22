@@ -150,8 +150,10 @@ li {
     cursor: pointer;
 }
 
-#listarProdutos li div {
+.infosItem {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
 
 }
 

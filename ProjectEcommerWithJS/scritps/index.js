@@ -84,9 +84,6 @@ getAllProducts();
 // START FUNCTION TO LIST ALL PRODUCTS
 
 function listAllProducts(products) {
-
-    console.log(products);
-
     if (!Array.isArray(products)) {
         throw new TypeError("Esperado um array de produtos.");
     }
@@ -95,46 +92,69 @@ function listAllProducts(products) {
         return "Nenhum produto disponível.";
     }
 
-    /**
-     *
-     *  Listagem caso seja necessário futuramente
-     * const listagem = products.map((produto, index) => `${index + 1}. ${JSON.stringify(produto)}`);
-     * console.log(listagem);
-    
-     */
+    const ulElement = document.getElementById('listarProdutos'); // Corrigido para o UL real
 
     products.forEach(product => {
-        // // li
-        // const listLi = document.createElement("li");
-        // const valueText = document.createTextNode(product.title)
-        // listLi.appendChild(valueText);
-        // document.getElementById('listarProdutos').appendChild(listLi);
+        // Cria o li principal
+        const listItem = document.createElement('li');
+        listItem.className = 'listaItem';
 
-        // h6
+        // Desconto
         const hSix = document.createElement('h6');
-        const valueHSix = document.createTextNode(product.title)
-        hSix.appendChild(valueHSix);
-        document.getElementById('listaItem').appendChild(hSix);
+        hSix.className = 'descontoItem';
+        const desconto = product.price * product.discountPercentage / 100;
+        hSix.textContent = `-R$${desconto.toFixed(2)} (${product.discountPercentage}%)`;
+        listItem.appendChild(hSix);
 
-        // img
+        // Imagem
         const imgItem = document.createElement('img');
-        // imgItem.src = product.images[0];
+        imgItem.className = 'imagemItem';
         imgItem.src = product.thumbnail;
+        imgItem.alt = product.title;
+        listItem.appendChild(imgItem);
 
-        const listItem = document.getElementById('listaItem');
+        // Div infosItem
+        const divInfos = document.createElement('div');
+        divInfos.className = 'infosItem';
 
-        if(listItem){
-            listItem.appendChild(imgItem);
-        }
+        // Título
+        const pItem = document.createElement('p');
+        pItem.className = 'tituloItem';
+        pItem.textContent = product.title;
+        divInfos.appendChild(pItem);
 
+        // Preço antigo
+        const spanItem = document.createElement('span');
+        spanItem.className = 'valorItem';
+        spanItem.textContent = 'de R$ ' + product.price.toFixed(2);
+        divInfos.appendChild(spanItem);
 
+        // Texto "Por:"
+        const pPer = document.createElement('p');
+        pPer.textContent = 'Por:';
+        divInfos.appendChild(pPer);
 
+        // Preço com desconto
+        const pDiscount = document.createElement('p');
+        pDiscount.className = 'valorTotalItem';
+        const valorFinal = product.price - desconto;
+        pDiscount.textContent = `R$ ${valorFinal.toFixed(2)}`;
+        divInfos.appendChild(pDiscount);
 
+        // button
+        const btnItem = document.createElement('button');
+        btnItem.className = 'adicionarCarrinho';
+        btnItem.textContent = "Add Car";
+        divInfos.appendChild(btnItem);
 
+        // Adiciona a div com info ao li
+        listItem.appendChild(divInfos);
+
+        // Adiciona o li ao UL principal
+        ulElement.appendChild(listItem);
     });
-
-    // return listagem;
 }
+
 
 // END FUNCTION TO LIST ALL PRODUCTS
 
