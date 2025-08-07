@@ -1,44 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultor de CEP</title>
+    <link href="./src/output.css" rel="stylesheet">
+    <script src="scripts.js" defer></script>
+    <!-- <link href="./input.css" rel="stylesheet">: -->
 </head>
-<body>
-    <input type="text" id="cepInput" placeholder="Digite o CEP">  
-    <button id="consultarCep">Consultar CEP</button>
-    <div id="resultado"></div>
-<script>
-    document.getElementById('consultarCep').addEventListener('click', function() {
-        const cep = document.getElementById('cepInput').value;
-        const resultadoDiv = document.getElementById('resultado');
 
-        if (cep.length !== 8 || isNaN(cep)) {
-            resultadoDiv.innerHTML = 'Por favor, digite um CEP válido com 8 dígitos.';
-            return;
-        }
-
-        fetch(`https://viacep.com.br/ws/${cep}/json/`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.erro) {
-                    resultadoDiv.innerHTML = 'CEP não encontrado.';
-                } else {
-                    resultadoDiv.innerHTML = `
-                        <p>CEP: ${data.cep}</p>
-                        <p>Logradouro: ${data.logradouro}</p>
-                        <p>Bairro: ${data.bairro}</p>
-                        <p>Cidade: ${data.localidade}</p>
-                        <p>Estado: ${data.uf}</p>
-                    `;
-                }
-            })
-            .catch(error => {
-                console.error('Erro ao consultar o CEP:', error);
-                resultadoDiv.innerHTML = 'Ocorreu um erro ao consultar o CEP.';
-            });
-    });
-</script>
+<body class="bg-[#0a0e2a] min-h-screen flex flex-col justify-center items-center">
+    <!-- Stepper -->
+    <div class="w-full max-w-2xl mt-8">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex flex-col items-center flex-1">
+                <div class="bg-green-400 text-white rounded-full w-10 h-10 flex items-center justify-center mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5.121 17.804A13.937 13.937 0 0112 15c2.485 0 4.797.657 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <span class="text-white text-sm">Criação de conta</span>
+            </div>
+            <div class="flex-1 flex justify-center">
+                <div class="border-t-2 border-gray-500 w-full mt-5"></div>
+            </div>
+            <div class="flex flex-col items-center flex-1">
+                <div class="bg-green-400 text-white rounded-full w-10 h-10 flex items-center justify-center mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17.657 16.657L13.414 12.414a4 4 0 10-1.414 1.414l4.243 4.243a1 1 0 001.414-1.414z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 11a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </div>
+                <span class="text-white text-sm">Endereço</span>
+            </div>
+            <div class="flex-1 flex justify-center">
+                <div class="border-t-2 border-gray-500 w-full mt-5"></div>
+            </div>
+            <div class="flex flex-col items-center flex-1">
+                <div class="bg-gray-400 text-white rounded-full w-10 h-10 flex items-center justify-center mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 9V7a5 5 0 00-10 0v2a2 2 0 00-2 2v7a2 2 0 002 2h10a2 2 0 002-2v-7a2 2 0 00-2-2z" />
+                    </svg>
+                </div>
+                <span class="text-gray-300 text-sm">Pagamento</span>
+            </div>
+        </div>
+        <!-- Form Card -->
+        <div class="bg-[#181c3a] rounded-xl p-8 shadow-lg">
+            <h2 class="text-white text-2xl font-bold mb-2">Cadastre o seu endereço</h2>
+            <p class="text-gray-300 mb-6">Preencha os campos para podermos enviar seus produtos</p>
+            <form>
+                <input id="cep" type="text" placeholder="Digite o seu CEP"
+                    class="w-full mb-4 p-3 rounded-lg bg-[#23264a] text-white placeholder-gray-400 focus:outline-none"
+                    maxlength="9" />
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <input id="rua" type="text" placeholder="Rua"
+                        class="p-3 rounded-lg bg-[#23264a] text-white placeholder-gray-400 focus:outline-none" />
+                    <input id="numero" type="text" placeholder="Digite o número da residência"
+                        class="p-3 rounded-lg bg-[#23264a] text-white placeholder-gray-400 focus:outline-none" />
+                </div>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <input id="complemento" type="text" placeholder="Digite o complemento"
+                        class="p-3 rounded-lg bg-[#23264a] text-white placeholder-gray-400 focus:outline-none" />
+                    <input id="bairro" type="text" placeholder="Bairro"
+                        class="p-3 rounded-lg bg-[#23264a] text-white placeholder-gray-400 focus:outline-none" />
+                </div>
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <input id="cidade" type="text" placeholder="Cidade"
+                        class="p-3 rounded-lg bg-[#23264a] text-white placeholder-gray-400 focus:outline-none" />
+                    <input id="estado" type="text" placeholder="Estado"
+                        class="p-3 rounded-lg bg-[#23264a] text-white placeholder-gray-400 focus:outline-none" />
+                </div>
+                <div class="flex justify-end">
+                    <button type="submit"
+                        class="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-2 rounded-full transition">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
