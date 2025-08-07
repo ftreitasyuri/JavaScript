@@ -27,9 +27,12 @@ const dragLeave = ({target}) =>{
     
 }
 const Drop = ({target}) =>{
-    //  console.log(target);
-    target.classList.remove('is-dragging');
-    target.append(draggeCard);
+    //  console.log(target);   
+    
+        if(target.classList.contains('swim-lane')){
+            target.classList.remove('is-dragging');
+        target.append(draggeCard);
+    }
     
 }
 
